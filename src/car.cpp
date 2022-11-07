@@ -1,5 +1,7 @@
 #include "car.h"
 
+#include <utility>
+
 Car::Car() {
     this->_brand = nullptr;
     this->_model = nullptr;
@@ -15,15 +17,15 @@ Car::Car() {
 
 Car::Car(std::string brand, std::string model, std::string type, std::string generation, int productionYear,
          std::string color, float engineCapacity, int enginePower, std::string fuel,int mileage, int price) {
-    this->_brand = brand;
-    this->_model = model;
-    this->_type = type;
-    this->_generation = generation;
+    this->_brand = std::move(brand);
+    this->_model = std::move(model);
+    this->_type = std::move(type);
+    this->_generation = std::move(generation);
     this->_productionYear = productionYear;
-    this->_color = color;
+    this->_color = std::move(color);
     this->_engineCapacity = engineCapacity;
     this->_enginePower = enginePower;
-    this->_fuel = fuel;
+    this->_fuel = std::move(fuel);
     this->_mileage = mileage;
     this->_price = price;
 }

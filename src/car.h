@@ -14,8 +14,8 @@ private:
     std::string _generation;
     std::string _color;
     std::string _fuel;
-    float _price;
     float _engineCapacity;
+    int _price;
     int _productionYear;
     int _enginePower;
     int _mileage;
