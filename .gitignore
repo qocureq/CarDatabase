@@ -28,7 +28,6 @@
 *.out
 *.app
 
-
-
+# CLion directories
 cmake-build-debug
 .idea
