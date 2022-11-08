@@ -29,14 +29,13 @@ void Database::removeCar(unsigned int index)
     this->_cars.erase(this->_cars.begin() + index);
 }
 
-std::string Database::getContent()
-{
+std::string Database::getContent() const {
     std::string buffer;
 
     if(this->_carCount == 0)
         buffer += "Database is empty!\n";
     else
-        for(auto car : this->_cars)
+        for(auto car : _cars)
             buffer += car.getCarData();
 
     return buffer;
@@ -44,7 +43,61 @@ std::string Database::getContent()
 
 void Database::printDatabase() const
 {
+    std::cout << getContent();
+}
 
+std::string Database::getContentByBrand(const std::string& brand) const
+{
+    std::string buffer;
+    for(auto car : _cars)
+        if(car.getBrand() == brand)
+            buffer += car.getCarData();
+
+    if (buffer.empty())
+        return ("No " + brand + " cars in database!");
+
+    return buffer;
+}
+
+void Database::printDatabaseByBrand(const std::string& brand) const
+{
+    std::cout << getContentByBrand(brand);
+}
+
+std::string Database::getContentByModel(const std::string &model) const
+{
+    std::string buffer;
+    for(auto car : _cars)
+        if(car.getModel() == model)
+            buffer += car.getCarData();
+
+    if (buffer.empty())
+        return ("No " + model + " cars in database!");
+
+    return buffer;
+}
+
+void Database::printDatabaseByModel(const std::string& model) const
+{
+    std::cout << getContentByBrand(model);
+}
+
+std::string Database::getContentByColor(const std::string &color) const
+{
+    std::string buffer;
+    for(auto car : _cars)
+        if(car.getColor() == color)
+            buffer += car.getCarData();
+
+    if (buffer.empty())
+        return ("No " + color + " cars in database!");
+
+    return buffer;
+}
+
+void Database::printDatabaseByColor(const std::string &color) const
+{
+    std::cout << getContentByModel(color);
 }
 
 Car Database::operator[](unsigned int index) const { return this->getCar(index); }

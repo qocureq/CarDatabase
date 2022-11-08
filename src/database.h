@@ -9,10 +9,17 @@ public:
     Car& getCar(unsigned int index);
     void removeCar(unsigned int index);
     int getCarCount() const;
-    std::string getContent();
+    std::string getContent() const;
     void printDatabase() const;
-    Car operator[] (unsigned int index) const;
+    std::string getContentByBrand(const std::string& brand) const;
+    void printDatabaseByBrand(const std::string& brand) const;
+    std::string getContentByModel(const std::string& model) const;
+    void printDatabaseByModel(const std::string& model) const;
+    std::string getContentByColor(const std::string& color) const;
+    void printDatabaseByColor(const std::string& color) const;
 
+
+    Car operator[] (unsigned int index) const;
     Car & operator[] (unsigned int index);
 
 private:
