@@ -12,7 +12,6 @@ struct DatabaseTest : ::testing::Test
 
 TEST_F(DatabaseTest, CanAddCarToDb)
 {
-
     db.add(lanos);
     EXPECT_EQ(1,db.getCarCount());
 }

@@ -8,6 +8,15 @@ public:
         std::string color, float engineCapacity, int enginePower, std::string fuel,int mileage, int price);
     std::string getCarData();
     void printData();
+
+    std::string getBrand() const;
+    std::string getModel() const;
+    std::string getColor() const;
+    float getEngineCapacity() const;
+    int getPrice() const;
+    int getProductionYear() const;
+    int getEnginePower() const;
+    int getMileage() const;
 private:
     std::string _brand;
     std::string _model;

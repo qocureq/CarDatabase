@@ -57,3 +57,19 @@ std::string Car::printWithCommas(int n) {
     } while (n);
     return s;
 }
+
+std::string Car::getBrand() const { return _brand; }
+
+std::string Car::getModel() const { return _model; }
+
+std::string Car::getColor() const { return _color; }
+
+float Car::getEngineCapacity() const { return _engineCapacity; }
+
+int Car::getPrice() const { return _price; }
+
+int Car::getProductionYear() const { return _productionYear; }
+
+int Car::getEnginePower() const { return _enginePower; }
+
+int Car::getMileage() const { return _mileage; }
