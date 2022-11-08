@@ -15,13 +15,6 @@ It gathers data about cars such as:
 * Mileage
 * Price in PLN
 
-Current features are:
-* Search by specific data
-
-Planned features are:
-* Search by lowest/highest value
-* Search by more/less than x value
-* Search within range of x,y values
 ## Features
 
 - Print information about a specific car
