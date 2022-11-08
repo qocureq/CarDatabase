@@ -29,7 +29,7 @@ std::string Car::getCarData()
     buffer += ("\nProduction Year: " + std::to_string(_productionYear));
     buffer += ("\nColor: " + _color);
     buffer += ("\nEngine Capacity: "  + std::to_string(_engineCapacity).substr(0, 3) +" L");
-    buffer += ("\nEngine Power: " + std::to_string(_enginePower));
+    buffer += ("\nEngine Power: " + std::to_string(_enginePower) + " HP");
     buffer += ("\nFuel Type: " + _fuelType);
     buffer += ("\nMileage: " + printWithCommas(_mileage) + " km");
     buffer += ("\nPrice: " + printWithCommas(_price) + " PLN");

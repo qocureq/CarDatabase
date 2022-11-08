@@ -35,7 +35,7 @@ struct DatabaseTest : ::testing::Test
                             "Production Year: 2009\n"
                             "Color: Grey\n"
                             "Engine Capacity: 1.8 L\n"
-                            "Engine Power: 143\n"
+                            "Engine Power: 143 HP\n"
                             "Fuel Type: Petrol + LPG\n"
                             "Mileage: 140,000 km\n"
                             "Price: 26,000 PLN";
@@ -45,7 +45,7 @@ struct DatabaseTest : ::testing::Test
                            "Production Year: 2001\n"
                            "Color: Silver\n"
                            "Engine Capacity: 1.5 L\n"
-                           "Engine Power: 101\n"
+                           "Engine Power: 101 HP\n"
                            "Fuel Type: Petrol + LPG\n"
                            "Mileage: 280,000 km\n"
                            "Price: 2,000 PLN";
