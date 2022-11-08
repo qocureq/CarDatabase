@@ -1,15 +1,52 @@
 #include "database.h"
+#include <iostream>
 
-void Database::add(const Car &c) {
+void Database::add(const Car &c)
+{
     this->_cars.push_back(c);
     this->_carCount++;
 }
 
-Car Database::getCar(unsigned int index) {
+Car Database::getCar(unsigned int index) const
+{
     // TODO: add exception if index doesn't exist
     return this->_cars.at(index);
 }
 
-int Database::getCarCount() const {
+Car &Database::getCar(unsigned int index)
+{
+    return this->_cars.at(index);
+}
+
+int Database::getCarCount() const
+{
     return this->_carCount;
 }
+
+void Database::removeCar(unsigned int index)
+{
+    this->_carCount--;
+    this->_cars.erase(this->_cars.begin() + index);
+}
+
+std::string Database::getContent()
+{
+    std::string buffer;
+
+    if(this->_carCount == 0)
+        buffer += "Database is empty!\n";
+    else
+        for(auto car : this->_cars)
+            buffer += car.getCarData();
+
+    return buffer;
+}
+
+void Database::printDatabase() const
+{
+
+}
+
+Car Database::operator[](unsigned int index) const { return this->getCar(index); }
+
+Car& Database::operator[](unsigned int index) { return this->getCar(index); }
