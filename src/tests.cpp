@@ -5,8 +5,28 @@
 
 struct DatabaseTest : ::testing::Test
 {
-    Car lancer{"Mitsubishi", "Lancer", "VIII", "Sedan", 2009, "Grey", 1.8, 143, "Petrol + LPG", 140000, 26000};
-    Car lanos{"Daewoo", "Lanos", "", "Sedan", 2001, "Silver", 1.5, 101, "Petrol + LPG", 280000, 2000};
+    Car lancer{"Mitsubishi",
+               "Lancer",
+               "VIII",
+               "Sedan",
+               2009,
+               "Grey",
+               1.8,
+               143,
+               "Petrol + LPG",
+               140000,
+               26000};
+    Car lanos{"Daewoo",
+              "Lanos",
+              "",
+              "Sedan",
+              2001,
+              "Silver",
+              1.5,
+              101,
+              "Petrol + LPG",
+              280000,
+              2000};
     Database db;
     std::string lancerStr = "\nBrand: Mitsubishi\n"
                             "Model: Lancer\n"
@@ -121,3 +141,5 @@ TEST_F(DatabaseTest, DisplayDatabaseByNonExistentModel)
 
     EXPECT_EQ(expected, content);
 }
+
+// TODO: further tests

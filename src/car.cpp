@@ -1,7 +1,6 @@
 #include "car.h"
 #include <iostream>
 #include <utility>
-#include <locale>
 
 Car::Car(std::string brand, std::string model, std::string generation, std::string type, int productionYear,
          std::string color, float engineCapacity, int enginePower, std::string fuelType,int mileage, int price) {

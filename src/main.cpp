@@ -1,9 +1,8 @@
 #include <iostream>
 #include "car.h"
 #include "database.h"
-#include <locale>
 
-Car carCreator()
+Car carCreator() //this maybe can go somewhere else
 {
     std::string brand, model, generation, type, productionYear, color, engineCapacity, enginePower, fuelType, mileage, price;
     std::cout << "\n[Creating a car]\n";
@@ -36,12 +35,6 @@ Car carCreator()
 
 int main()
 {
-/*    Car car{"Mitsubishi", "Lancer", "VIII", "Sedan", 2009, "Grey", 1.8, 143, "Petrol + LPG", 140000, 26000};
-    car.printData();
-    Database db;
-    db.add(car);
-    db.printDatabase();
-
-    Car car2 = carCreator();
-    car2.printData();*/
+    // no code in main yet
+    return 0;
 }

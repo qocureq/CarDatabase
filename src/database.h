@@ -2,6 +2,7 @@
 #define CAR_DATABASE_DATABASE_H
 #include "car.h"
 #include "vector"
+
 class Database {
 public:
     void add(const Car & c);
@@ -18,6 +19,9 @@ public:
     std::string getContentByColor(const std::string& color) const;
     void printDatabaseByColor(const std::string& color) const;
 
+    // TODO: more searching by more/less/within range of price/engine/production year/mileage
+
+    // TODO: sorting by specific data
 
     Car operator[] (unsigned int index) const;
     Car & operator[] (unsigned int index);
