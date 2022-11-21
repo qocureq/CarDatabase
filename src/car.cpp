@@ -17,7 +17,7 @@ Car::Car(std::string brand, std::string model, std::string generation, std::stri
     _price = price;
 }
 
-std::string Car::getCarData()
+std::string Car::getCarData() const
 {
     std::string buffer;
     buffer += ("\nBrand: " + _brand);
@@ -37,11 +37,13 @@ std::string Car::getCarData()
     return buffer;
 }
 
-void Car::printData() {
+void Car::printData() const
+{
     std::cout << getCarData();
 }
 
-std::string Car::printWithCommas(int n) {
+std::string Car::printWithCommas(int n)
+{
     std::string s;
     int count = 0;
     do
@@ -72,3 +74,25 @@ int Car::getProductionYear() const { return _productionYear; }
 int Car::getEnginePower() const { return _enginePower; }
 
 int Car::getMileage() const { return _mileage; }
+
+bool Car::operator==(const Car& obj) const
+{
+    return
+            _brand == obj._brand
+            && _model == obj._model
+            && _generation == obj._generation
+            && _type == obj._type
+            && _productionYear == obj._productionYear
+            && _color == obj._color
+            && _engineCapacity == obj._engineCapacity
+            &&_enginePower == obj._enginePower
+            && _fuelType == obj._fuelType
+            &&_mileage == obj._mileage
+            && _price == obj._price;
+}
+
+std::ostream &operator<<(std::ostream &os, const Car& obj)
+{
+    os << obj.getCarData();
+    return os;
+}

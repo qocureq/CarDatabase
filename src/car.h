@@ -6,9 +6,8 @@ class Car {
 public:
     Car(std::string brand, std::string model, std::string generation, std::string type, int productionYear,
         std::string color, float engineCapacity, int enginePower, std::string fuel,int mileage, int price);
-    std::string getCarData();
-    void printData();
-
+    std::string getCarData() const;
+    void printData() const;
     std::string getBrand() const;
     std::string getModel() const;
     std::string getColor() const;
@@ -17,6 +16,8 @@ public:
     int getProductionYear() const;
     int getEnginePower() const;
     int getMileage() const;
+    bool operator==(const Car& obj) const;
+    friend std::ostream& operator<<(std::ostream& , const Car& obj);
 private:
     std::string _brand;
     std::string _model;
