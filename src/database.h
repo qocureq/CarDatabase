@@ -18,6 +18,10 @@ public:
     void printDatabaseByModel(const std::string& model) const;
     std::string getContentByColor(const std::string& color) const;
     void printDatabaseByColor(const std::string& color) const;
+    Car getCarWithMaxPower();
+    void printCarWithMaxPower();
+    Car getCarWithMinPower();
+    void printCarWithMinPower();
 
     // TODO: more searching by more/less/within range of price/engine/production year/mileage
 

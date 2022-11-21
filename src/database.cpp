@@ -100,6 +100,50 @@ void Database::printDatabaseByColor(const std::string &color) const
     std::cout << getContentByModel(color);
 }
 
+Car Database::getCarWithMaxPower()  //TODO: implement check for empty database
+{
+    int power{};
+    Car *result;
+    for(auto& car : _cars)
+    {
+        if(car.getEnginePower() > power)
+        {
+            power = car.getEnginePower();
+            result = &car;
+        }
+    }
+    return *result;
+}
+
+void Database::printCarWithMaxPower()
+{
+    Car *result = nullptr;
+    *result = getCarWithMaxPower();
+    std::cout << result->getCarData();
+}
+
+Car Database::getCarWithMinPower()    //TODO: implement check for empty database
+{
+    int power{};
+    Car *result;
+    for(auto& car : _cars)
+    {
+        if(car.getEnginePower() < power || power == 0)
+        {
+            power = car.getEnginePower();
+            result = &car;
+        }
+    }
+    return *result;
+}
+
+void Database::printCarWithMinPower()
+{
+    Car *result = nullptr;
+    *result = getCarWithMinPower();
+    std::cout << result->getCarData();
+}
+
 Car Database::operator[](unsigned int index) const { return this->getCar(index); }
 
 Car& Database::operator[](unsigned int index) { return this->getCar(index); }
