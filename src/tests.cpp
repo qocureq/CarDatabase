@@ -142,4 +142,26 @@ TEST_F(DatabaseTest, DisplayDatabaseByNonExistentModel)
     EXPECT_EQ(expected, content);
 }
 
+TEST_F(DatabaseTest, GetHighestHorsepowerCar)
+{
+    Car expected = lancer;
+    db.add(lancer);
+    db.add(lanos);
+    Car result = db.getCarWithMaxPower();
+
+    EXPECT_EQ(expected, result);
+}
+
+TEST_F(DatabaseTest, GetLowestHorsepowerCar)
+{
+    Car expected = lanos;
+    db.add(lancer);
+    db.add(lanos);
+    Car result = db.getCarWithMinPower();
+
+    EXPECT_EQ(expected, result);
+}
+
+
+
 // TODO: further tests
