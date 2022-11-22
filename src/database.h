@@ -1,7 +1,7 @@
 #ifndef CAR_DATABASE_DATABASE_H
 #define CAR_DATABASE_DATABASE_H
 #include "car.h"
-#include "vector"
+#include <vector>
 
 class Database {
 public:
@@ -18,10 +18,10 @@ public:
     void printDatabaseByModel(const std::string& model) const;
     std::string getContentByColor(const std::string& color) const;
     void printDatabaseByColor(const std::string& color) const;
-    Car getCarWithMaxPower();
-    void printCarWithMaxPower();
-    Car getCarWithMinPower();
-    void printCarWithMinPower();
+    std::pair<Car, int> getCarWithMaxPower() const;
+    void printCarWithMaxPower() const;
+    std::pair<Car, int> getCarWithMinPower() const;
+    void printCarWithMinPower() const;
 
     // TODO: more searching by more/less/within range of price/engine/production year/mileage
 

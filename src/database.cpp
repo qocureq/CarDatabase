@@ -100,48 +100,72 @@ void Database::printDatabaseByColor(const std::string &color) const
     std::cout << getContentByModel(color);
 }
 
-Car Database::getCarWithMaxPower()  //TODO: implement check for empty database
+std::pair<Car, int> Database::getCarWithMaxPower() const  //TODO: implement check for empty database
 {
     int power{};
-    Car *result;
+    int count{};
+    Car resultCar;
+
     for(auto& car : _cars)
     {
         if(car.getEnginePower() > power)
         {
             power = car.getEnginePower();
-            result = &car;
+            resultCar = car;
+            count = 1;
         }
+        else if(car.getEnginePower() == power)
+            count++;
     }
-    return *result;
+
+    std::pair<Car, int> result (resultCar,count);
+    return result;
 }
 
-void Database::printCarWithMaxPower()
+void Database::printCarWithMaxPower() const
 {
-    Car *result = nullptr;
-    *result = getCarWithMaxPower();
-    std::cout << result->getCarData();
+    std::pair<Car, int> resultPair(getCarWithMaxPower());
+    Car *resultCar;
+    *resultCar = resultPair.first;
+
+    if(resultPair.second > 1)
+        std::cout << "Found " << resultPair.second << " cars with " << resultCar->getEnginePower() << " horsepower!" << std::endl;
+
+    std::cout << resultCar->getCarData();
 }
 
-Car Database::getCarWithMinPower()    //TODO: implement check for empty database
+std::pair<Car, int> Database::getCarWithMinPower() const   //TODO: implement check for empty database
 {
     int power{};
-    Car *result;
+    int count{};
+    Car resultCar;
+
     for(auto& car : _cars)
     {
         if(car.getEnginePower() < power || power == 0)
         {
             power = car.getEnginePower();
-            result = &car;
+            resultCar = car;
+            count = 1;
         }
+        else if(car.getEnginePower() == power)
+            count++;
     }
-    return *result;
+
+    std::pair<Car, int> result (resultCar,count);
+    return result;
 }
 
-void Database::printCarWithMinPower()
+void Database::printCarWithMinPower() const
 {
-    Car *result = nullptr;
-    *result = getCarWithMinPower();
-    std::cout << result->getCarData();
+    std::pair<Car, int> resultPair(getCarWithMinPower());
+    Car *resultCar;
+    *resultCar = resultPair.first;
+
+    if(resultPair.second > 1)
+        std::cout << "Found " << resultPair.second << " cars with " << resultCar->getEnginePower() << " horsepower!" << std::endl;
+
+    std::cout << resultCar->getCarData();
 }
 
 Car Database::operator[](unsigned int index) const { return this->getCar(index); }
