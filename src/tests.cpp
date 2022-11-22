@@ -144,20 +144,22 @@ TEST_F(DatabaseTest, DisplayDatabaseByNonExistentModel)
 
 TEST_F(DatabaseTest, GetHighestHorsepowerCar)
 {
-    Car expected = lancer;
+    std::pair<Car, int> result;
+    std::pair<Car, int> expected(lancer, 1);
     db.add(lancer);
     db.add(lanos);
-    Car result = db.getCarWithMaxPower();
+    result = db.getCarWithMaxPower();
 
     EXPECT_EQ(expected, result);
 }
 
 TEST_F(DatabaseTest, GetLowestHorsepowerCar)
 {
-    Car expected = lanos;
+    std::pair<Car, int> result;
+    std::pair<Car, int> expected(lanos, 1);
     db.add(lancer);
     db.add(lanos);
-    Car result = db.getCarWithMinPower();
+    result = db.getCarWithMinPower();
 
     EXPECT_EQ(expected, result);
 }
