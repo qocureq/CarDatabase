@@ -2,8 +2,24 @@
 #include <iostream>
 #include <utility>
 
+Car::Car()
+{
+    _brand = "";
+    _model = "";
+    _generation = "";
+    _type = "";
+    _productionYear = 0;
+    _color = "";
+    _engineCapacity = 0;
+    _enginePower = 0;
+    _fuelType = "";
+    _mileage = 0;
+    _price = 0;
+}
+
 Car::Car(std::string brand, std::string model, std::string generation, std::string type, int productionYear,
-         std::string color, float engineCapacity, int enginePower, std::string fuelType,int mileage, int price) {
+         std::string color, float engineCapacity, int enginePower, std::string fuelType,int mileage, int price)
+{
     _brand = std::move(brand);
     _model = std::move(model);
     _generation = std::move(generation);

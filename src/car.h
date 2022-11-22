@@ -4,6 +4,7 @@
 
 class Car {
 public:
+    Car();
     Car(std::string brand, std::string model, std::string generation, std::string type, int productionYear,
         std::string color, float engineCapacity, int enginePower, std::string fuel,int mileage, int price);
     std::string getCarData() const;
