@@ -166,7 +166,7 @@ TEST_F(DatabaseTest, GetLowestHorsepowerCar)
 
 TEST_F(DatabaseTest, SetPrice)
 {
-    std::string result;
+    std::string content;
     std::string expected = "\nBrand: Mitsubishi\n"
                            "Model: Lancer\n"
                            "Generation: VIII\n"
@@ -179,8 +179,10 @@ TEST_F(DatabaseTest, SetPrice)
                            "Mileage: 140,000 km\n"
                            "Price: 25,000 PLN";
     db.add(lancer);
-    db[0].setPrice(2500);
+    db[0].setPrice(25000);
+    content = db[0].getCarData();
 
+    EXPECT_EQ(expected, content);
 }
 
 
