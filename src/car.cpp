@@ -85,6 +85,8 @@ float Car::getEngineCapacity() const { return _engineCapacity; }
 
 int Car::getPrice() const { return _price; }
 
+void Car::setPrice(int price) { _price = price; }
+
 int Car::getProductionYear() const { return _productionYear; }
 
 int Car::getEnginePower() const { return _enginePower; }

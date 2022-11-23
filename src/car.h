@@ -14,6 +14,7 @@ public:
     std::string getColor() const;
     float getEngineCapacity() const;
     int getPrice() const;
+    void setPrice(int price);
     int getProductionYear() const;
     int getEnginePower() const;
     int getMileage() const;

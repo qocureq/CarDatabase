@@ -164,6 +164,25 @@ TEST_F(DatabaseTest, GetLowestHorsepowerCar)
     EXPECT_EQ(expected, result);
 }
 
+TEST_F(DatabaseTest, SetPrice)
+{
+    std::string result;
+    std::string expected = "\nBrand: Mitsubishi\n"
+                           "Model: Lancer\n"
+                           "Generation: VIII\n"
+                           "Type: Sedan\n"
+                           "Production Year: 2009\n"
+                           "Color: Grey\n"
+                           "Engine Capacity: 1.8 L\n"
+                           "Engine Power: 143 HP\n"
+                           "Fuel Type: Petrol + LPG\n"
+                           "Mileage: 140,000 km\n"
+                           "Price: 25,000 PLN";
+    db.add(lancer);
+    db[0].setPrice(2500);
+
+}
+
 
 
 // TODO: further tests
