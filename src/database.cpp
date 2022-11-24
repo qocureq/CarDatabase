@@ -9,7 +9,6 @@ void Database::add(const Car &c)
 
 Car Database::getCar(unsigned int index) const
 {
-    // TODO: add exception if index doesn't exist
     return this->_cars.at(index);
 }
 
@@ -100,8 +99,11 @@ void Database::printDatabaseByColor(const std::string &color) const
     std::cout << getContentByModel(color);
 }
 
-std::pair<Car, int> Database::getCarWithMaxPower() const  //TODO: implement check for empty database
+std::pair<Car, int> Database::getCarWithMaxPower() const
 {
+    if (_cars.empty())
+        throw std::invalid_argument("No cars were found!");
+
     int power{};
     int count{};
     Car resultCar;
@@ -125,7 +127,7 @@ std::pair<Car, int> Database::getCarWithMaxPower() const  //TODO: implement chec
 void Database::printCarWithMaxPower() const
 {
     std::pair<Car, int> resultPair(getCarWithMaxPower());
-    Car *resultCar;
+    Car *resultCar = nullptr;
     *resultCar = resultPair.first;
 
     if(resultPair.second > 1)
@@ -134,8 +136,11 @@ void Database::printCarWithMaxPower() const
     std::cout << resultCar->getCarData();
 }
 
-std::pair<Car, int> Database::getCarWithMinPower() const   //TODO: implement check for empty database
+std::pair<Car, int> Database::getCarWithMinPower() const
 {
+    if (_cars.empty())
+        throw std::invalid_argument("No cars were found!");
+
     int power{};
     int count{};
     Car resultCar;
@@ -159,7 +164,7 @@ std::pair<Car, int> Database::getCarWithMinPower() const   //TODO: implement che
 void Database::printCarWithMinPower() const
 {
     std::pair<Car, int> resultPair(getCarWithMinPower());
-    Car *resultCar;
+    Car *resultCar = nullptr;
     *resultCar = resultPair.first;
 
     if(resultPair.second > 1)
